@@ -1,0 +1,160 @@
+.page-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+}
+
+.animation {
+    height: 550px;
+    position: fixed;
+    top: .5rem;
+    z-index: 0;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+h2 {
+    margin-top: 21rem;
+    font-size: 2.2rem;
+    z-index: 1;
+    color: white;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.5rem;
+    z-index: 1;
+    color: rgb(187, 186, 186);
+    padding: 0 1rem;
+    font-weight: 400;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background: #313131;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -1rem;
+}
+
+.login-container input, .signup-container input {
+    width: 50%;
+    height: 2.5rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgb(187, 186, 186);
+    background: #fff;
+    margin-bottom: -.8rem;
+}
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 2.5rem;
+    margin: 1rem 0;
+    gap: .5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    background: #7a9aef;
+    margin-top: 1.5rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #6c88d5;
+}
+
+.login-container form h5  {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    margin-top: -.5rem;
+    font-weight: 400;
+    width: 50%;
+    text-decoration: underline;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.login-container form h5:hover {
+    opacity: 1;
+}
+
+.divider {
+    width: 50%;
+    height: 1px;
+    background: #fff;
+    margin: 1rem 0;
+}
+
+.google-login, .signup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 2.5rem;
+    margin: 1rem 0;
+    border: none;
+    gap: .5rem;
+    border-radius: 5px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #3c3a3c;
+    background: #fff;
+    margin-top: 1.5rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.google-login:hover {
+    background: #9db5f8;
+    color: white;
+}
+
+.signup-btn {
+    margin-top: 1rem;
+    background-color: rgb(233, 153, 6);
+    color: white;
+}
+
+.signup-btn:hover {
+    background-color: rgb(192, 126, 4);
+}
