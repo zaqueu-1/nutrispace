@@ -8,7 +8,7 @@ Patient managing app with interesting features.
 ![demo]()
 
 ## Deploy
-
+https://nutrispace.vercel.app/
 
 
 ## Roadmap
@@ -18,7 +18,11 @@ Pages:
 - Dashboard/Home Page [];
 - Patient Summary Page [DONE!];
 - 'New Patient' Page [DONE!];
-- Back-end [IN PROGRESS!];
+- Back-end [DONE?];
+- Search [DONE];
+- Dashboard [];
+- Login/Auth [] (page done);
+- media queries [];
 
 
 Other:

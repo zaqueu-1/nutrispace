@@ -31,6 +31,13 @@
     color: rgb(140, 82, 255);
 }
 
+.message {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(140, 82, 255);
+}
+
 .card {
     background-color: rgb(140, 82, 255, 0.5);
     width: 50%;

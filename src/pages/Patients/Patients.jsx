@@ -19,6 +19,10 @@ function Patients() {
     loadPatients()
   }, [])
 
+  const filteredPatients = patients.filter((patient) => 
+  patient.name.toLowerCase().includes(search.toLowerCase())
+)
+
   return (
     <>
       <Navbar />
@@ -30,8 +34,9 @@ function Patients() {
           </div>
 
           <div className="card-container">
-            {patients.length === 0 && <p>Sem pacientes cadastrados.</p>}
-            {patients.map((patient) => (
+          {filteredPatients.length === 0 && search !== '' && <p className='message'>Nenhum paciente encontrado.</p>}
+          {filteredPatients.length === 0 && search === '' && <p classname='message'>Sem pacientes cadastrados.</p>}
+            {filteredPatients.map((patient) => (
               <div className="card" key={patient._id}>
                 <h2>{patient.name}</h2>
                 <a href={`/patient/${patient._id}`}>clique para mais Informações</a>

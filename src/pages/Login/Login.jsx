@@ -16,6 +16,12 @@ function Login() {
         (modalOpen ? setModalOpen(false) : setModalOpen(true))
     }
 
+    const handleAuth = (e) => {
+        e.preventDefault()
+        console.log('auth')
+        window.location.href = '/dashboard'
+    }
+
 
   return (
     <div className="page-wrapper">
@@ -35,7 +41,7 @@ function Login() {
             <form>
                     <input type='text' placeholder='Usuário' />
                     <input type='password' placeholder='Senha' />
-                    <button className='login-btn' type='submit'><MdLogin /> Entrar</button>
+                    <button className='login-btn' onClick={handleAuth} type='submit'><MdLogin /> Entrar</button>
                     <h5>Esqueci minha senha</h5>
             </form>
 

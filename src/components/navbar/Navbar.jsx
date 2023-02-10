@@ -9,7 +9,7 @@ function Navbar() {
       <nav className='navbar'>
         <Logo />
         <div style={{display: 'flex', alignItems: 'center'}}>
-            <li><a href="/">Dashboard</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/patients">Pacientes</a></li>
             <li><a href="/new">Novo Paciente</a></li>
             <button className='signout-btn'><GoSignOut /></button>
