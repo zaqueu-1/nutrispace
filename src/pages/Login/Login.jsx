@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import animation from '../../images/space_animation.mp4'
+import astronaut from '../../images/astronaut.png'
 import  Logo  from '../../components/logo/Logo'
 import Signup from '../../components/signup/Signup'
 import './login.css'
@@ -25,10 +25,8 @@ function Login() {
 
   return (
     <div className="page-wrapper">
-        <div className='video-container'>
-            <video className='animation' autoPlay loop muted>
-                <source src={animation} type='video/mp4' />
-            </video>
+        <div className='astronaut-container'>
+            <img src={astronaut} className='astronaut' alt='astronaut' />
             <div className="text-wrapper">
                 <h2>Nutrição não é de <i>outro planeta</i></h2>
                 <h3>Gerenciar seus pacientes também não!</h3>

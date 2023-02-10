@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './patients.css'
+import nopatient from '../../images/no_patient.png'
 import Navbar from '../../components/navbar/Navbar'
 import fetchPatients from '../../axios/config'
 import { BiSearchAlt2 } from 'react-icons/bi'
@@ -34,8 +35,8 @@ function Patients() {
           </div>
 
           <div className="card-container">
-          {filteredPatients.length === 0 && search !== '' && <p className='message'>Nenhum paciente encontrado.</p>}
-          {filteredPatients.length === 0 && search === '' && <p classname='message'>Sem pacientes cadastrados.</p>}
+          {filteredPatients.length === 0 && search !== '' && <img src={nopatient} alt='not-found' className='message' />}
+          {filteredPatients.length === 0 && search === '' && <p classname='loading'>Sem pacientes cadastrados.</p>}
             {filteredPatients.map((patient) => (
               <div className="card" key={patient._id}>
                 <h2>{patient.name}</h2>

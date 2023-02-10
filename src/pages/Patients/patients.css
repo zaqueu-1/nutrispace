@@ -32,9 +32,15 @@
 }
 
 .message {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
+    display: flex;
+    margin: 0 auto;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     color: rgb(140, 82, 255);
 }
 
