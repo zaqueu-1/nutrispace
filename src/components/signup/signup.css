@@ -29,15 +29,11 @@
 
 .close-btn {
     font-size: 1.8rem;
-    position: absolute;
-    top: 240px;
-    right: 110px;
     color: #fff;
     cursor: pointer;
-    width: 50%;
-    align-items: flex-end;
-    justify-self: flex-end;
     transition: all 0.4s;
+    align-self: flex-end;
+    width: 10%;
 }
 
 .close-btn:hover {

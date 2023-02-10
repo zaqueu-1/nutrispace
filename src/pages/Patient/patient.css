@@ -1,0 +1,79 @@
+p, h2 {
+    color: white;
+ }
+
+ h2 {
+    margin-bottom: .5rem;
+    color: rgb(187, 186, 186);
+ }
+
+ .contact {
+    margin-bottom: .5rem;
+ }
+
+ .contact a {
+    color: rgb(140, 82, 255);
+    font-size: 1.6rem;
+    transition: all 0.4s;
+    margin-left: .2rem;
+ }
+
+ .contact a:hover {
+    opacity: 0.8;
+ }
+
+ .stats, .tools {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: rgba(117, 117, 117, 0.1);
+    width: 40%;
+    border-radius: 12px;
+    margin: 0 auto;
+ }
+
+ .tools {
+    margin-top: 1rem;
+ }
+
+ .multiplier-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    background: rgb(140, 82, 255, 0.4);
+    border-radius: 5px;
+    width: 55%;
+}
+
+.multiplier-wrapper p {
+    margin-left: .2rem;
+}
+
+.multiplier-wrapper select {
+    border: 1px solid white;
+    padding: .2rem;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(90, 57, 154);
+}
+
+.back-btn {
+    padding: .5rem;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(87, 87, 243);
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: all 0.4s;
+}
+
+.back-btn:hover {
+    background-color: rgb(87, 87, 243, 0.8);
+}
+
+

@@ -1,0 +1,49 @@
+POST http://localhost:3001/api/patient
+Content-Type: application/json
+
+{
+    "name": "Eduardo Zaqueu",
+    "gender": "M",
+    "age": 27,
+    "weight": 88,
+    "height": 175,
+    "drive": "https://google.com",
+    "tel": 21989122887,
+    "email": "bss.eduardo@yahoo.com.br",
+    "plan": "Mensal",
+    "start": "2023-02-01",
+    "end": "2023-02-01",
+    "feedback": "2023-02-01",
+    "update": "2023-02-01",
+    "active": true
+}
+
+###
+GET http://localhost:3001/api/patient
+
+###
+GET http://localhost:3001/api/patient/63e54f4b29b5586e2ad12444
+
+###
+DELETE http://localhost:3001/api/patient/63e54f4b29b5586e2ad12444
+
+###
+PUT http://localhost:3001/api/patient/63e54f4b29b5586e2ad12444
+Content-Type: application/json
+
+{
+    "name": "Clarice Nascimento",
+    "gender": "F",
+    "age": 25,
+    "weight": 70,
+    "height": 155,
+    "drive": "https://google.com",
+    "tel": 21989122887,
+    "email": "claricensc@hotmail.com",
+    "plan": "Mensal",
+    "start": "2023-02-01",
+    "end": "2023-02-01",
+    "feedback": "2023-02-01",
+    "update": "2023-02-01",
+    "active": true
+}

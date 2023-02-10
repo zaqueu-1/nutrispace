@@ -1,11 +1,12 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate, useParams } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
 import NewPatient from './pages/NewPatient/NewPatient.jsx';
 import Patient from './pages/Patient/Patient';
-import { useState, useEffect } from "react";
+import Patients from './pages/Patients/Patients';
 
 function App() {
+  const { id } = useParams()
 
   return (
       <BrowserRouter>
@@ -13,7 +14,8 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/new" element={<NewPatient />} />
-          <Route path="/patient" element={<Patient />} />
+          <Route path="/patient/:id" element={<Patient />} />
+          <Route path="/patients" element={<Patients />} />
         </Routes>
       </BrowserRouter>
   );

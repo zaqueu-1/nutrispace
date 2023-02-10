@@ -1,0 +1,65 @@
+.search-bar {
+    width: 40%;
+    background-color: rgba(117, 117, 117, 0.2);
+    border-radius: 8px;
+    padding: .8rem;
+    font-size: 1rem;
+    outline: none;
+    margin: 0 auto 2rem auto;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(140, 82, 255);
+}
+
+.search-wrapper input {
+    flex: 1;
+    padding: .5rem;
+    border-radius: 6px;
+    outline: none;
+    border: transparent;
+    margin-left: .5rem;
+    background-color: white;
+    color: rgb(140, 82, 255);
+}
+
+.search-wrapper input::placeholder {
+    color: rgb(140, 82, 255);
+}
+
+.card {
+    background-color: rgb(140, 82, 255, 0.5);
+    width: 50%;
+    margin: .5rem auto;
+    padding: 1rem;
+    border-radius: 4px;
+    transition: all 0.4s;
+    border-left: 4px solid rgb(255, 255, 255, 0.5);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.card a {
+    font-style: italic;
+    text-decoration: none;
+    color: white;
+    font-size: .9rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.card a:hover {
+    opacity: 0.8;
+}

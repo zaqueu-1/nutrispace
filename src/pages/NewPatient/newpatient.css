@@ -1,0 +1,116 @@
+.new-patient-container {
+    width: 100%;
+    height: 100%;
+}
+
+.new-patient-form {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(117, 117, 117, 0.1);
+    border-radius: 12px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: .2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: white;
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.new-patient-form h3 {
+    font-size: 1.5rem;
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    border-radius: 100%;
+    padding: .4rem .8rem;
+    color: rgb(187, 186, 186);
+    font-weight: 400;
+    margin: 1rem 0 .5rem 0;
+    transition: all 0.4s;
+}
+
+.active {
+    background-color: rgb(140, 82, 255, 0.7);
+}
+
+.block {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.wrapper, .wrapper-w20 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 10%;
+}
+
+.wrapper-w20 {
+    width: 21.8%;
+}
+
+.new-patient-form label {
+    margin-top: .5rem;
+    color: rgb(255, 255, 255, 0.5);
+    font-weight: 200;
+    font-style: italic;
+}
+
+.new-patient-form input, .new-patient-form select {
+    width: 45%;
+    border-radius: 5px;
+    height: 2.5rem;
+    margin: .5rem 0 1rem 0;
+    padding: 0 .5rem;
+    border: 4px solid transparent;
+    outline: none;
+    transition: all 0.4s;
+}
+
+#age, #weight, #height, #gender, #tel, #email, #start, #end, #update, #feedback {
+    width: 100%;
+}
+
+.new-patient-form input:focus, .new-patient-form select:focus{
+    border: 4px solid rgb(140, 82, 255, 0.7);
+}
+
+.new-patient-form input::placeholder, .new-patient-form select {
+    color: rgb(140, 82, 255, 0.8);
+    font-style: italic;
+}
+
+.nextpage, .submit-btn, .prevpage {
+    padding: .5rem;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(87, 87, 243);
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: rgb(115, 159, 226);
+}

@@ -16,8 +16,10 @@ Pages:
 - Login Page [DONE!];
 - SignIn modal [DONE!];
 - Dashboard/Home Page [];
-- Patient Summary Page [];
-- 'New Patient' Page [];
+- Patient Summary Page [DONE!];
+- 'New Patient' Page [DONE!];
+- Back-end [IN PROGRESS!];
+
 
 Other:
 - 'Tools' area in Patient Summary Page [];

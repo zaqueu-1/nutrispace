@@ -1,0 +1,48 @@
+.navbar-wrapper {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: #313131;
+    color: white;
+    padding: 0 1rem;
+}
+
+.navbar li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s;
+}
+
+.navbar li a:hover {
+    color: #b3b3b3;
+}
+
+.signout-btn {
+    width: 10%;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    color: rgb(249, 78, 78);
+    background: none;
+    margin-top: .5rem;
+    margin-left: -.5rem;
+    transition: all 0.4s;
+}
+
+.signout-btn:hover {
+    color: rgb(170, 74, 74);
+}
