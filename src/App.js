@@ -4,11 +4,13 @@ import Login from './pages/Login/Login';
 import NewPatient from './pages/NewPatient/NewPatient.jsx';
 import Patient from './pages/Patient/Patient';
 import Patients from './pages/Patients/Patients';
+import { motion, AnimatePresence } from 'framer-motion'
 
 function App() {
   const { id } = useParams()
 
   return (
+    <AnimatePresence>
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
@@ -19,6 +21,7 @@ function App() {
           <Route path="/patients" element={<Patients />} />
         </Routes>
       </BrowserRouter>
+    </AnimatePresence>
   );
 }
 

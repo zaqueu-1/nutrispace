@@ -4,6 +4,11 @@ import Logo from '../logo/Logo'
 import { GoSignOut } from 'react-icons/go'
 
 function Navbar() {
+
+  const handleSignOut = () => {
+      window.location.href = '/login'
+  }
+
   return (
     <div className='navbar-wrapper'>
       <nav className='navbar'>
@@ -12,7 +17,7 @@ function Navbar() {
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/patients">Pacientes</a></li>
             <li><a href="/new">Novo Paciente</a></li>
-            <button className='signout-btn'><GoSignOut /></button>
+            <button onClick={handleSignOut} className='signout-btn'><GoSignOut /></button>
         </div>
 
       </nav>

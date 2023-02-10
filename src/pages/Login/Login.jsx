@@ -6,6 +6,7 @@ import './login.css'
 import { FcGoogle } from 'react-icons/fc'
 import { MdLogin } from 'react-icons/md'
 import { MdOutlineDoubleArrow } from 'react-icons/md'
+import { motion } from 'framer-motion'
 
 function Login() {
 
@@ -24,24 +25,24 @@ function Login() {
 
 
   return (
-    <div className="page-wrapper">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }} className="page-wrapper">
         <div className='astronaut-container'>
             <img src={astronaut} className='astronaut' alt='astronaut' />
-            <div className="text-wrapper">
+            <motion.div initial={{y:20}} animate={{ y: 0}} transition={{ ease: "easeOut", duration: 0.8 }} className="text-wrapper">
                 <h2>Nutrição não é de <i>outro planeta</i></h2>
                 <h3>Gerenciar seus pacientes também não!</h3>
                 <h3>Explore a melhor plataforma do universo!</h3>
-            </div>
+            </motion.div>
         </div>
 
         <div className="login-container">
             <Logo />
-            <form>
+            <motion.form initial={{y:20}} animate={{ y: 0}} transition={{ ease: "easeOut", duration: 1.2 }}>
                     <input type='text' placeholder='Usuário' />
                     <input type='password' placeholder='Senha' />
                     <button className='login-btn' onClick={handleAuth} type='submit'><MdLogin /> Entrar</button>
                     <h5>Esqueci minha senha</h5>
-            </form>
+            </motion.form>
 
             <div className="divider" />
 
@@ -52,7 +53,7 @@ function Login() {
             {modalOpen && (
                     <Signup handleOpenModal={handleOpenModal} modalOpen={modalOpen} setModalOpen={setModalOpen}/>
                 )}
-    </div>
+    </motion.div>
   )
 }
 

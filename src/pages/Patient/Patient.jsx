@@ -7,6 +7,7 @@ import { DiGoogleDrive } from 'react-icons/di'
 import { FaWhatsapp } from 'react-icons/fa'
 import './patient.css'
 import fetchPatients from '../../axios/config'
+import { motion } from 'framer-motion'
 
 function Patient() {
 
@@ -38,13 +39,14 @@ function Patient() {
     }
 
     const handleReturn = () => {
-      window.location.href = '/patients';
+      window.history.back();
     }
 
   return (
     <>
       <Navbar />
-      <div className="stats">
+      <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }}>
+      <motion.div initial={{y: 50}} animate={{ y: 0 }} transition={{ ease: "easeOut", duration: 0.6 }} className="stats">
           <h2>Informações Pessoais</h2>
           <div className="contact">
             <a href={`mailto:${patient.email}`}><AiOutlineMail /></a>
@@ -58,9 +60,9 @@ function Patient() {
           <p>Término: {formatDate(patient.end)}</p><br/>
           <p>Feedback: {formatDate(patient.feedback)}</p>
           <p>Atualização: {formatDate(patient.update)}</p>
-      </div>
+      </motion.div>
 
-      <div className="tools">
+      <motion.div initial={{y:15}} animate={{y:0}} transition={{ ease: "easeOut", duration: 0.9 }} className="tools">
         <h2>Cálculos Energéticos</h2>
         <div className="multiplier-wrapper">
           <p>Multiplicador de Atividade</p>
@@ -79,11 +81,12 @@ function Patient() {
         : patient.gender === 'F' ? ((447.593+(9.247*patient.weight)+(3.098*patient.height)-(4.330*patient.age))*multiplier) : 0}kcal</p>
         <p>Mifflin St. Jeor: {patient.gender === 'M' ? (((10*patient.weight)+(6.25*patient.height)-(5*patient.age)-161)*multiplier) 
         : patient.gender === 'F' ? (((10*patient.weight)+(6.25*patient.height)-(5*patient.age)+5)*multiplier) : 0}kcal</p>
-      </div>
+      </motion.div>
 
       <div className="buttons-container">
         <button className="back-btn" onClick={(e) => handleReturn(e)}>Voltar</button>
       </div>
+      </motion.main>
     </>
   )
 }

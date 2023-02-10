@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar/Navbar'
 import { AppConsumer } from '../../contexts/AppContext'
 import { toast } from 'react-toastify'
 import fetchPatients from '../../axios/config'
+import { motion } from 'framer-motion'
 
 function NewPatient() {
 
@@ -83,10 +84,9 @@ function NewPatient() {
   return (
     <>
     <Navbar />
-    <div className='new-patient-container'>
       <form action="" className='new-patient-form'>
        {section === 1 && (
-          <div className="section">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }} className="section">
             <div style={{display:'flex', gap:'.5rem', marginBottom: '.5rem'}} className="steps-container">
               <h3 className={section === 1 ? 'active' : ''}>1</h3>
               <h3 className={section === 2 ? 'active' : ''}>2</h3>
@@ -119,11 +119,11 @@ function NewPatient() {
             <div className="buttons-container">
               <button className="nextpage" type='submit' onClick={() => handleSection('next')}>Próximo</button>
             </div>
-        </div>
+        </motion.div>
        )} 
 
        {section === 2 && (
-          <div className="section">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }}  className="section">
             <div style={{display:'flex', gap:'.5rem', marginBottom: '.5rem'}} className="steps-container">
               <h3 className={section === 1 ? 'active' : ''}>1</h3>
               <h3 className={section === 2 ? 'active' : ''}>2</h3>
@@ -146,11 +146,11 @@ function NewPatient() {
                 <button className="prevpage" onClick={() => handleSection('back')}>Anterior</button>
                 <button className="nextpage" onClick={() => handleSection('next')}>Próximo</button>
               </div>
-          </div>
+            </motion.div>
        )}
 
       {section === 3 && (
-        <div className='section'>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }} className='section'>
           <div style={{display:'flex', gap:'.5rem', marginBottom: '.5rem'}} className="steps-container">
             <h3 className={section === 1 ? 'active' : ''}>1</h3>
             <h3 className={section === 2 ? 'active' : ''}>2</h3>
@@ -173,11 +173,11 @@ function NewPatient() {
             <button className="prevpage" onClick={() => handleSection('back')}>Anterior</button>
             <button className="nextpage" onClick={() => handleSection('next')}>Próximo</button>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {section === 4 && (
-        <div className='section'>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }} className='section'>
           <div style={{display:'flex', gap:'.5rem', marginBottom: '1rem'}} className="steps-container">
             <h3 className={section === 1 ? 'active' : ''}>1</h3>
             <h3 className={section === 2 ? 'active' : ''}>2</h3>
@@ -196,11 +196,10 @@ function NewPatient() {
             <button className="prevpage" onClick={() => handleSection('back')}>Anterior</button>
             <button type='submit' className="submit-btn" onClick={(e) => handleSubmit(e)}>Cadastrar</button>
           </div>
-        </div>
+        </motion.div>
       )}
 
       </form>
-    </div>
     </>
   )
 }

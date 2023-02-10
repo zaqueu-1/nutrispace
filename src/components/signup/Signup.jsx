@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import './signup.css'
 import { FaWindowClose } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 function Signup({handleOpenModal, modalOpen, setModalOpen}) {
 
@@ -26,8 +27,8 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
       }
       
   return (
-    <div ref={modalRef} className='modal-container'>
-      <form className="signup-container">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.2 } }} ref={modalRef} className='modal-container'>
+      <motion.form initial={{y:20}} animate={{ y: 0}} transition={{ ease: "easeOut", duration: 0.8 }} className="signup-container">
         <FaWindowClose className='close-btn' onClick={handleOpenModal}/>
         <h1 style={{color: 'white'}}>Cadastre-se</h1>
             <input className='signup-input' type='text' placeholder='Nome' />
@@ -35,8 +36,8 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
             <input className='signup-input' type='password' placeholder='Senha' />
             <input className='signup-input' type='password' placeholder='Confirmar senha' />
             <button className='signup-btn' type='submit'>Cadastrar</button>
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   )
 }
 
