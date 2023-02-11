@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const fetchPatients = axios.create({
-    baseURL: 'http://localhost:3001/api/',
+    baseURL: 'https://nutrispace-backend.vercel.app/api',
     headers: {
         'Content-Type': 'application/json',
     },
