@@ -16,7 +16,7 @@
     align-items: center;
     margin: 0 auto;
     background-color: rgb(50, 72, 124);
-    width: 60%;
+    width: 40%;
     height: 40%;
     border-radius: 8px;
     padding: 1rem .5rem;
@@ -29,6 +29,7 @@
 .signup-container input {
     outline: none;
     transition: all 0.4s;
+    width: 100%;
 }
 
 .close-btn {
@@ -37,7 +38,12 @@
     cursor: pointer;
     transition: all 0.4s;
     align-self: flex-end;
-    width: 10%;
+    width: 5%;
+    background: none;
+    border: none;
+    display: block;
+    position: fixed;
+    top: 210px;
 }
 
 .close-btn:hover {
@@ -49,8 +55,8 @@
     .signup-container {
         margin-top: -9rem;
         width: 80%;
-        height: 45vh;
-        padding: .5rem;
+        height: 40vh;
+        padding: .8rem .5rem;
     }
 
     .signup-container h1 {
@@ -63,15 +69,7 @@
     }
     
     .close-btn {
-        font-size: 1.8rem;
-        color: #fff;
-        cursor: pointer;
-        transition: all 0.4s;
-        align-self: flex-end;
-        width: 10%;
+        display: none;
     }
     
-    .close-btn:hover {
-        opacity: 0.7;
-    }
 }

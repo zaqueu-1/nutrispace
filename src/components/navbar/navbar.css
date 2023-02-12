@@ -52,7 +52,7 @@
     display: none;
 }
 
-.close-btn {
+.closenav-btn {
     display: none;
 }
 
@@ -126,7 +126,7 @@
         backdrop-filter: blur(5px);
     }
 
-    .close-btn{
+    .closenav-btn{
         display: block;
         border: none;
         background: none;
@@ -137,6 +137,10 @@
         color: white;
         cursor: pointer;
         transition: all 0.2s;
+    }
+
+    .closenav-btn:hover {
+        color: #b3b3b3;
     }
 }
   

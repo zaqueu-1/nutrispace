@@ -71,7 +71,7 @@ function Login() {
                     <input type='text' value={userEmail} required onChange={(e) => setUserEmail(e.target.value)} placeholder='E-mail' />
                     <input type='password' value={pass} required onChange={(e) => setPass(e.target.value)} placeholder='********' />
                     <button className='login-btn' onClick={(e) => handleAuth(e)} type='submit'><MdLogin /> Entrar</button>
-                    <h5>Esqueci minha senha</h5>
+                     {/*<<h5>Esqueci minha senha</h5>*/}
             </motion.form>
 
             <div className="divider" />

@@ -34,7 +34,7 @@ function Navbar() {
             <span className='navbar-btn'><HiOutlineMenuAlt3 /></span>
           </button>
             <ul className={navbarOpen === false ? 'navbar-menu open' : 'navbar-menu'}>
-            <button className='close-btn' onClick={toggleNavbar}><FaWindowClose /></button>
+            <button className='closenav-btn' onClick={toggleNavbar}><FaWindowClose /></button>
               <li><a href="/dashboard">Dashboard</a></li>
               <li><a href="/patients">Pacientes</a></li>
               <li><a href="/new">Novo Paciente</a></li>
