@@ -5,14 +5,15 @@
 Patient managing app for nutritionists. Built entirely using MERN stack techs (MongoDB, Express, ReactJS, NodeJS).
 
 ## Demo
-![demo]()
+![demo](https://github.com/zaqueu-1/nutrispace/blob/main/github/chrome-capture-2023-1-12.gif)
 
 ## Deploy
 https://nutrispace.vercel.app/
 
+### Back-end
+https://github.com/zaqueu-1/nutrispace-backend
 
 ## Roadmap
-Pages:
 - Login Page [DONE!];
 - SignIn modal [DONE!];
 - Dashboard/Home Page [DONE!];
@@ -24,6 +25,8 @@ Pages:
 - Login/Auth [DONE!];
 - email validation on signup [DONE!];
 - media queries for max 600px [DONE!];
+
+Soon:
 - media queries for max 900px [];
 - forgetpass btn [];
 - google login [];
