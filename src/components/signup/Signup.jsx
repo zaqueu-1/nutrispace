@@ -49,11 +49,7 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
         }
       
         if (user && userEmail && pass && confirmPass) {
-          const emailExists = await fetchDb.get(`/user`, {params: {userEmail: userEmail}});
-      
-          if (emailExists.data.length) {
-            toast.error('Email já cadastrado!');
-          } else if (pass === confirmPass) {
+          if (pass === confirmPass) {
             const res = await fetchDb.post('/user', newUser)
         
             if (res.status === 201) {
