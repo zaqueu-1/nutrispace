@@ -1,6 +1,5 @@
 import React, {useEffect, useRef} from 'react'
 import './signup.css'
-import { FaWindowClose } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import fetchDb from '../../axios/config'
 import { toast } from 'react-toastify'
@@ -72,10 +71,8 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.2 } }} ref={modalRef} className='modal-container'>
       <motion.form initial={{y:20}} animate={{ y: 0}} transition={{ ease: "easeOut", duration: 0.8 }} className="signup-container">
-        <button onClick={handleOpenModal} className="close-btn">
-          <FaWindowClose />
-        </button>
         <h1 style={{color: 'white'}}>Cadastre-se</h1>
+        <p>ou clique fora da caixa para voltar</p>
         <form style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center'}}>
           <input className='signup-input' type='text' required value={user} onChange={(e) => setUser(e.target.value)} placeholder='Nome' />
           <input className='signup-input' type='text' required value={userEmail} onChange={(e) => setUserEmail(e.target.value)} placeholder='E-mail' />

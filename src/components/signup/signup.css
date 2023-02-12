@@ -17,9 +17,9 @@
     margin: 0 auto;
     background-color: rgb(50, 72, 124);
     width: 40%;
-    height: 40%;
+    height: 45%;
     border-radius: 8px;
-    padding: 1rem .5rem;
+    padding: 1rem 0;
 }
 
 .signup-container button {
@@ -32,22 +32,9 @@
     width: 100%;
 }
 
-.close-btn {
-    font-size: 1.8rem;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.4s;
-    align-self: flex-end;
-    width: 5%;
-    background: none;
-    border: none;
-    display: block;
-    position: fixed;
-    top: 210px;
-}
-
-.close-btn:hover {
-    opacity: 0.7;
+.signup-container p {
+    font-size: .9rem;
+    color: rgb(199, 199, 199);
 }
 
 @media only screen and (max-width:600px) {
