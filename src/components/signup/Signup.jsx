@@ -2,6 +2,9 @@ import React, {useEffect, useRef} from 'react'
 import './signup.css'
 import { FaWindowClose } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import fetchDb from '../../axios/config'
+import { toast } from 'react-toastify'
+import { AppConsumer } from '../../contexts/AppContext'
 
 function Signup({handleOpenModal, modalOpen, setModalOpen}) {
 
@@ -18,11 +21,51 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
           document.removeEventListener("click", handleClickOutside);
         };
       }, [modalOpen]);
+
+      const {         
+        user,
+        setUser,
+        userEmail,
+        setUserEmail,
+        pass,
+        setPass,
+        confirmPass,
+        setConfirmPass, 
+      } = AppConsumer();
       
 
-    function handleClickOutside(event) {
-        if (event.target === modalRef.current) {
+    function handleClickOutside(e) {
+        if (e.target === modalRef.current) {
           setModalOpen(false);
+        }
+      }
+
+      const handleSignUp = async (e) => {
+        e.preventDefault();
+      
+        const newUser = {
+          user,
+          userEmail,
+          pass,
+        }
+      
+        if (user && userEmail && pass && confirmPass) {
+          const emailExists = await fetchDb.get(`/user`, {params: {userEmail: userEmail}});
+      
+          if (emailExists.data.length) {
+            toast.error('Email já cadastrado!');
+          } else if (pass === confirmPass) {
+            const res = await fetchDb.post('/user', newUser)
+        
+            if (res.status === 201) {
+              toast.success('Cadastrado com sucesso!')
+              setModalOpen(false)
+            }
+          } else {
+            toast.error('As senhas não conferem!')
+          }
+        } else { 
+          toast.error('Preencha todos os campos!')
         }
       }
       
@@ -31,11 +74,13 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
       <motion.form initial={{y:20}} animate={{ y: 0}} transition={{ ease: "easeOut", duration: 0.8 }} className="signup-container">
         <FaWindowClose className='close-btn' onClick={handleOpenModal}/>
         <h1 style={{color: 'white'}}>Cadastre-se</h1>
-            <input className='signup-input' type='text' placeholder='Nome' />
-            <input className='signup-input' type='text' placeholder='E-mail' />
-            <input className='signup-input' type='password' placeholder='Senha' />
-            <input className='signup-input' type='password' placeholder='Confirmar senha' />
-            <button className='signup-btn' type='submit'>Cadastrar</button>
+        <form style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center'}}>
+          <input className='signup-input' type='text' required value={user} onChange={(e) => setUser(e.target.value)} placeholder='Nome' />
+          <input className='signup-input' type='text' required value={userEmail} onChange={(e) => setUserEmail(e.target.value)} placeholder='E-mail' />
+          <input className='signup-input' type='password' required value={pass} onChange={(e) => setPass(e.target.value)} placeholder='Senha' />
+          <input className='signup-input' type='password' required value={confirmPass} onChange={(e) => setConfirmPass(e.target.value)} placeholder='Confirmar senha' />
+          <button className='signup-btn' type='submit' onClick={(e) => handleSignUp(e)}>Cadastrar</button>
+        </form>
       </motion.form>
     </motion.div>
   )

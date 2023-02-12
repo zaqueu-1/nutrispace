@@ -1,19 +1,33 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react'
 import './newpatient.css'
 import Navbar from '../../components/navbar/Navbar'
 import { AppConsumer } from '../../contexts/AppContext'
 import { toast } from 'react-toastify'
-import fetchPatients from '../../axios/config'
+import fetchDb from '../../axios/config'
 import { motion } from 'framer-motion'
 
 function NewPatient() {
 
   const [section, setSection] = useState(1)
 
+  useEffect(() => {
+    const createdByToken = localStorage.getItem('createdBy');
+    setCreatedBy(createdByToken);
+  }, [])
+
   const handleSection = (mode) => {
    switch (mode) {
-    case 'next':
+    case 'goToSection2':
       (name && age && gender && weight && height ? setSection(section + 1)
+      : toast.error('Preencha todos os campos!'))
+      break;
+    case 'goToSection3':
+      (tel && drive && email ? setSection(section + 1)
+      : toast.error('Preencha todos os campos!'))
+      break;
+    case 'goToSection4':
+      (plan && start && end ? setSection(section + 1)
       : toast.error('Preencha todos os campos!'))
       break;
     case 'back':
@@ -51,7 +65,9 @@ function NewPatient() {
     setUpdate,
     gender,
     setGender,
-    active,} = AppConsumer();
+    active,
+    createdBy,
+    setCreatedBy,} = AppConsumer();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,20 +87,25 @@ function NewPatient() {
       update,
       active,
       gender,
+      createdBy,
     }
 
-    const res = await fetchPatients.post('/patient', newPatient)
+    if (update && feedback) {
+      const res = await fetchDb.post('/patient', newPatient)
 
-    if (res.status === 201) {
-      toast.success('Paciente cadastrado!')
-      window.location.href = '/patients'
+      if (res.status === 201) {
+        toast.success('Paciente cadastrado!')
+        window.location.href = '/patients'
+      }
+    } else {
+      toast.error('Preencha todos os campos!')
     }
   }
 
   return (
     <>
     <Navbar />
-      <form action="" className='new-patient-form'>
+      <form className='new-patient-form'>
        {section === 1 && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.5 } }} className="section">
             <div style={{display:'flex', gap:'.5rem', marginBottom: '.5rem'}} className="steps-container">
@@ -94,7 +115,7 @@ function NewPatient() {
               <h3 className={section === 4 ? 'active' : ''}>4</h3>
             </div>
             <label htmlFor="nome">Nome</label>
-            <input type="text" name='nome' value={name} min='3' max='80' required onChange={(e) => setName(e.target.value)} placeholder="Paciente" />
+            <input type="text" name='nome' value={name} min='3' max='80' required onChange={(e) => setName(e.target.value)} className='solo-input' placeholder="Paciente" />
               <div className="block">
                 <div className="wrapper">
                   <label htmlFor="gender" >Gênero </label>
@@ -117,7 +138,7 @@ function NewPatient() {
                 </div>
               </div>
             <div className="buttons-container">
-              <button className="nextpage" type='submit' onClick={() => handleSection('next')}>Próximo</button>
+              <button className="nextpage" type='submit' onClick={() => handleSection('goToSection2')}>Próximo</button>
             </div>
         </motion.div>
        )} 
@@ -131,20 +152,20 @@ function NewPatient() {
               <h3 className={section === 4 ? 'active' : ''}>4</h3>
             </div>
               <label htmlFor="drive">Pasta do Drive</label>
-              <input type="text" name='drive' value={drive} onChange={(e) => setDrive(e.target.value)} placeholder="Pasta do Google Drive" />
+              <input type="text" name='drive' value={drive} required onChange={(e) => setDrive(e.target.value)} placeholder="Pasta do Google Drive" />
               <div className="block">
                 <div className="wrapper-w20">
                   <label htmlFor="tel">Telefone</label>
-                  <input type="tel" id='tel'name='tel' minLength='8' value={tel} onChange={(e) => setTel(e.target.value)} placeholder="21988888888" />
+                  <input type="tel" id='tel'name='tel' minLength='8' value={tel} required onChange={(e) => setTel(e.target.value)} placeholder="21988888888" />
                 </div>
                 <div className="wrapper-w20">
                   <label htmlFor="email">E-mail</label>
-                  <input type="email" id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="contato@mail.com" />
+                  <input type="email" id='email' name='email' value={email} required onChange={(e) => setEmail(e.target.value)} placeholder="contato@mail.com" />
                 </div>
               </div>
               <div className="buttons-container">
                 <button className="prevpage" onClick={() => handleSection('back')}>Anterior</button>
-                <button className="nextpage" onClick={() => handleSection('next')}>Próximo</button>
+                <button className="nextpage" onClick={() => handleSection('goToSection3')}>Próximo</button>
               </div>
             </motion.div>
        )}
@@ -158,20 +179,26 @@ function NewPatient() {
             <h3 className={section === 4 ? 'active' : ''}>4</h3>
           </div>
           <label htmlFor="plan">Tipo de Plano</label>
-          <input type="text" name='plan' value={plan} onChange={(e) => setPlan(e.target.value)} placeholder="Mensal" />
+          <select name="plan" value={plan} required onChange={(e) => setPlan(e.target.value)}>
+            <option value={'Mensal'}>Mensal</option>
+            <option value={'Bimestra'}>Bimestral</option>
+            <option value={'Trimestral'}>Trimestral</option>
+            <option value={'Semestral'}>Semestral</option>
+            <option value={'Anual'}>Anual</option>
+          </select>
           <div className="block">
             <div className="wrapper-w20">
               <label htmlFor="start">Data de início</label>
-              <input type="date" id='start' name='start' value={start} onChange={(e) => setStart(e.target.value)} />
+              <input type="date" id='start' name='start' value={start} required onChange={(e) => setStart(e.target.value)} />
             </div>
             <div className="wrapper-w20">
               <label htmlFor="end">Data de conclusão</label>
-              <input type="date" id='end' name='end' value={end} onChange={(e) => setEnd(e.target.value)} />
+              <input type="date" id='end' name='end' value={end} required onChange={(e) => setEnd(e.target.value)} />
             </div>
           </div>
           <div className="buttons-container">
             <button className="prevpage" onClick={() => handleSection('back')}>Anterior</button>
-            <button className="nextpage" onClick={() => handleSection('next')}>Próximo</button>
+            <button className="nextpage" onClick={() => handleSection('goToSection4')}>Próximo</button>
           </div>
         </motion.div>
       )}
@@ -187,9 +214,9 @@ function NewPatient() {
           <div className="block">
             <div className="wrapper-w20">
               <label htmlFor="feedback">Coleta de feedback</label>
-              <input type="date" id='feedback' name='feedback' value={feedback} onChange={(e) => setFeedback(e.target.value)}  />
+              <input type="date" id='feedback' name='feedback' value={feedback} required onChange={(e) => setFeedback(e.target.value)}  />
               <label htmlFor="update">Data de atualização</label>
-              <input type="date" id='update' name='update' value={update} onChange={(e) => setUpdate(e.target.value)}  />
+              <input type="date" id='update' name='update' value={update} required onChange={(e) => setUpdate(e.target.value)}  />
             </div>
           </div>
           <div className="buttons-container">

@@ -61,19 +61,87 @@ p, h2 {
     background-color: rgb(90, 57, 154);
 }
 
+.buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      width: 70%;
+      margin: 2rem auto;
+}
+
 .back-btn {
-    padding: .5rem;
-    cursor: pointer;
-    color: white;
-    background-color: rgb(87, 87, 243);
-    border: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    transition: all 0.4s;
+   background-color: rgb(140, 82, 255, 0.5);
+   color: white;
+   border: none;
+   padding: .5rem 1rem;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all 0.2s;
+}
+
+.delete-btn {
+   background: none;
+   color: white;
+   opacity: 0.8;
+   border: none;
+   font-size: 1.7rem;
+   display: flex;
+   align-items: center;
+   transition: all 0.2s;
+}
+
+.delete-btn:hover {
+   opacity: 1;
+   color: rgb(236, 110, 110);
+   transform: scale(1.1);
 }
 
 .back-btn:hover {
-    background-color: rgb(87, 87, 243, 0.8);
+   background-color: rgba(104, 60, 192, 0.5);
+}
+
+@media only screen and (max-width:600px) {
+   h2 {
+      margin-bottom: .5rem;
+      font-size: 1.4rem;
+   }
+  
+   .contact {
+      margin-bottom: .25rem;
+   }
+  
+   .contact a {
+      color: rgb(140, 82, 255);
+      font-size: 1.6rem;
+      transition: all 0.4s;
+      margin-left: .2rem;
+   }
+  
+   .stats, .tools {
+      padding: 1rem;
+      width: 85%;
+   }
+  
+   .tools {
+      margin-top: .5rem;
+   }
+  
+   .multiplier-wrapper {
+      margin-bottom: .5rem;
+      padding: .5rem;
+      width: 80%;
+      justify-content: space-between;
+  }
+  
+  .multiplier-wrapper p {
+      margin-left: .2rem;
+      font-size: .8rem;
+  }
+  
+  .buttons-container {
+        margin: 1rem auto;
+  }
+  
 }
 
 

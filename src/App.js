@@ -1,27 +1,26 @@
-import { BrowserRouter, Route, Routes, Navigate, useParams } from 'react-router-dom';
+import { BrowserRouter, Route, Routes  } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
 import NewPatient from './pages/NewPatient/NewPatient.jsx';
 import Patient from './pages/Patient/Patient';
 import Patients from './pages/Patients/Patients';
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
-  const { id } = useParams()
 
   return (
-    <AnimatePresence>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/new" element={<NewPatient />} />
-          <Route path="/patient/:id" element={<Patient />} />
-          <Route path="/patients" element={<Patients />} />
-        </Routes>
-      </BrowserRouter>
-    </AnimatePresence>
+      <AnimatePresence>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/new" element={<NewPatient />} />
+            <Route path="/patient/:id" element={<Patient />} />
+            <Route path="/patients" element={<Patients />} />
+          </Routes>
+        </BrowserRouter>
+      </AnimatePresence>
   );
 }
 

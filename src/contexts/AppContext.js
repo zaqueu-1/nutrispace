@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const AppContext = createContext()
 
@@ -19,6 +19,11 @@ const AppProvider = ({ children }) => {
     const [gender, setGender] = useState('M')
     const [patient, setPatient] = useState('')
     const [patients, setPatients] = useState([])
+    const [user, setUser] = useState('')
+    const [pass, setPass] = useState('')
+    const [confirmPass, setConfirmPass] = useState('')
+    const [userEmail, setUserEmail] = useState('')
+    const [createdBy, setCreatedBy] = useState('')
 
  
     return (
@@ -55,6 +60,16 @@ const AppProvider = ({ children }) => {
         setActive,
         gender,
         setGender,
+        user,
+        setUser,
+        pass,
+        setPass,
+        confirmPass,
+        setConfirmPass,
+        userEmail,
+        setUserEmail,
+        createdBy,
+        setCreatedBy,
      }} >
           {children}
         </AppContext.Provider>

@@ -47,3 +47,97 @@
 .signout-btn:hover {
     color: rgb(170, 74, 74);
 }
+
+.navbar-btn {
+    display: none;
+}
+
+.close-btn {
+    display: none;
+}
+
+@media only screen and (max-width:600px) {
+    .open {
+        transform: translatex(700px);
+    }
+
+    .navbar-btn {
+        display: block;
+        width: 10%;
+        border: none;
+        padding: 0 1rem;
+        font-size: 1.7rem;
+        color: white;
+        background: none;
+        margin-top: .5rem;
+        margin-left: -.5rem;
+        transition: all 0.4s;
+        cursor: pointer;
+        z-index: 3;
+        position: fixed;
+        top: 18px;
+        right: 14px;
+    }
+
+    .navbar-btn:hover {
+        color: #b3b3b3;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        color: white;
+        padding: 0 1rem;
+    }
+
+    .navbar li {
+        margin: .8rem 0;
+    }
+
+    .navbar li a {
+        font-size: 1.5rem;
+    }
+
+    .signout-btn {
+        font-size: 1.8rem;
+        margin-top: -.2rem;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        z-index: 5;
+        width: 60vw;
+        height: 100vh;
+        background: rgba(104, 60, 192, 0.9);
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 6rem 0;
+        border-radius: 12px 0 0 12px;
+        transition: all 0.7s;
+        backdrop-filter: blur(5px);
+    }
+
+    .close-btn{
+        display: block;
+        border: none;
+        background: none;
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+}
+  
+  

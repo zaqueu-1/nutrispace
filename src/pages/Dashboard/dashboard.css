@@ -1,3 +1,21 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.welcome h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+.welcome p {
+    color: rgb(216, 216, 216);
+    font-size: 1.1rem;
+    margin-top: .25rem;
+}
+
 .table-container {
     display: flex;
     flex-direction: column;
@@ -47,9 +65,9 @@ tr {
     transition: all 0.4s;
 }
 
-tr:hover {
-    background-color: rgb(107, 98, 123, 0.5);
-    transform: scale(1.02);
+tr:hover, tr:nth-child(even):hover  {
+    background-color: rgba(238, 217, 255, 0.5);
+    transform: scale(1.01);
 }
 
 tr:nth-child(even) {
@@ -57,7 +75,69 @@ tr:nth-child(even) {
     transition: all 0.4s;
 }
 
-tr:nth-child(even):hover {
-    background-color: rgb(107, 98, 123, 0.5);
+.index-buttons {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.index-buttons button {
+    background-color: rgb(140, 82, 255, 0.5);
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.index-buttons button:hover {
+    background-color: rgba(104, 60, 192, 0.5);
+}
+
+.index-buttons button:disabled {
+    background-color: rgba(224, 223, 226, 0.5);
+    color: rgb(255, 255, 255, 0.5);
+    border: none;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width:600px) {
+    .welcome {
+        margin: 1rem 0;
+    }
+    
+    .welcome h1 {
+        font-size: 1.5rem;
+    }
+    
+    .welcome p {
+        font-size: .9rem;
+        padding: 0 .5rem;
+        text-align: center;
+    }
+    
+    .label p {
+        display: none;
+    }
+
+    .table-container {
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+    
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 .5rem;
+        font-size: 1rem;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
 }
 

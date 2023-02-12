@@ -1,3 +1,7 @@
+.card-container {
+    margin-bottom: 2.5rem;
+}
+
 .search-bar {
     width: 40%;
     background-color: rgba(117, 117, 117, 0.2);
@@ -46,24 +50,28 @@
 
 .card {
     background-color: rgb(140, 82, 255, 0.5);
-    width: 50%;
+    width: 45%;
     margin: .5rem auto;
-    padding: 1rem;
-    border-radius: 4px;
+    padding: .8rem .6rem;
+    border-radius: 6px 0 0 6px;
     transition: all 0.4s;
-    border-left: 4px solid rgb(255, 255, 255, 0.5);
+    border-left: 12px solid rgb(255, 255, 255, 0.5);
 }
 
 .card h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 0;
+    color: white;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
 }
 
 .card a {
     font-style: italic;
     text-decoration: none;
-    color: white;
+    color: rgb(196, 196, 196);
     font-size: .9rem;
     transition: all 0.4s;
     cursor: pointer;
@@ -71,4 +79,66 @@
 
 .card a:hover {
     opacity: 0.8;
+}
+
+.index-buttons {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    width: 70%;
+    margin: 2rem auto;
+}
+
+.index-buttons button {
+    background-color: rgb(140, 82, 255, 0.5);
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.index-buttons button:hover {
+    background-color: rgba(104, 60, 192, 0.5);
+}
+
+.index-buttons button:disabled {
+    background-color: rgba(224, 223, 226, 0.5);
+    color: rgb(255, 255, 255, 0.5);
+    border: none;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width:600px) {
+    .card-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .search-bar {
+        width: 80%;
+    }
+    
+    .message {
+        height: 200px;
+        width: 330px;
+    }
+    
+    .card {
+        width: 80%;
+        margin: .4rem auto;
+        padding: .6rem .5rem;
+    }
+    
+    .card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .card a {
+        font-size: .8rem;
+    }
+    
+    .index-buttons {
+        margin: 1.5rem auto;
+    }
 }
