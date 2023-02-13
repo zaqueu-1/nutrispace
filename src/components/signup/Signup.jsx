@@ -55,9 +55,12 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
             if (res.status === 201) {
               toast.success('Cadastrado com sucesso!')
               setModalOpen(false)
-            } else if (res.status === 400) {
-              toast.error('E-mail já cadastrado!')
+            } 
+            
+            if (res.status !== 201) {
+              return toast.error('E-mail já cadastrado!')
             }
+
           } else {
             toast.error('As senhas precisam ser iguais!')
           }
