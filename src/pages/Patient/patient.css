@@ -39,12 +39,12 @@ p, h2 {
  .multiplier-wrapper {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    justify-content: space-between;
     margin-bottom: 1rem;
     padding: .5rem;
     background: rgb(140, 82, 255, 0.4);
     border-radius: 5px;
-    width: 55%;
+    width: 45%;
 }
 
 .multiplier-wrapper p {

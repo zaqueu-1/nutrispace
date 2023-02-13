@@ -86,7 +86,7 @@ function Patient() {
         <div className="multiplier-wrapper">
           <p>Atividade</p>
           <select name="multiplier" value={multiplier} onChange={(e) => setMultiplier(e.target.value)}>
-            <option value={1}>x1.0</option>
+            <option value={1}>TMB</option>
             <option value={1.2}>x1.2</option>
             <option value={1.4}>x1.4</option>
             <option value={1.6}>x1.6</option>
