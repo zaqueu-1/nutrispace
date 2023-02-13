@@ -57,8 +57,8 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
               setModalOpen(false)
             } 
             
-            if (res.status !== 201) {
-              return toast.error('E-mail já cadastrado!')
+            if (res.status === 422) {
+              toast.error('E-mail já cadastrado!')
             }
 
           } else {
