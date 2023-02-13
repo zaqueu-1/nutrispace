@@ -51,15 +51,15 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
         if (user && userEmail && pass && confirmPass) {
           if (pass === confirmPass) {
             const res = await fetchDb.post('/user', newUser)
+
+            if (res.status === 200) {
+              toast.error('E-mail já cadastrado!')
+            }
         
             if (res.status === 201) {
               toast.success('Cadastrado com sucesso!')
               setModalOpen(false)
             } 
-            
-            if (res.status === 422) {
-              toast.error('E-mail já cadastrado!')
-            }
 
           } else {
             toast.error('As senhas precisam ser iguais!')
