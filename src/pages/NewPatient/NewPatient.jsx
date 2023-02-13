@@ -27,7 +27,7 @@ function NewPatient() {
       : toast.error('Preencha todos os campos!'))
       break;
     case 'goToSection4':
-      (plan && start && end ? setSection(section + 1)
+      (plan ? setSection(section + 1)
       : toast.error('Preencha todos os campos!'))
       break;
     case 'back':
@@ -90,16 +90,12 @@ function NewPatient() {
       createdBy,
     }
 
-    if (update && feedback) {
       const res = await fetchDb.post('/patient', newPatient)
 
       if (res.status === 201) {
         toast.success('Paciente cadastrado!')
         window.location.href = '/patients'
       }
-    } else {
-      toast.error('Preencha todos os campos!')
-    }
   }
 
   return (
@@ -189,11 +185,11 @@ function NewPatient() {
           <div className="block">
             <div className="wrapper-w20">
               <label htmlFor="start">Data de início</label>
-              <input type="date" id='start' name='start' value={start} required onChange={(e) => setStart(e.target.value)} />
+              <input type="date" id='start' name='start' value={start} onChange={(e) => setStart(e.target.value)} />
             </div>
             <div className="wrapper-w20">
               <label htmlFor="end">Data de conclusão</label>
-              <input type="date" id='end' name='end' value={end} required onChange={(e) => setEnd(e.target.value)} />
+              <input type="date" id='end' name='end' value={end} onChange={(e) => setEnd(e.target.value)} />
             </div>
           </div>
           <div className="buttons-container">
@@ -214,9 +210,9 @@ function NewPatient() {
           <div className="block">
             <div className="wrapper-w20">
               <label htmlFor="feedback">Coleta de feedback</label>
-              <input type="date" id='feedback' name='feedback' value={feedback} required onChange={(e) => setFeedback(e.target.value)}  />
+              <input type="date" id='feedback' name='feedback' value={feedback} onChange={(e) => setFeedback(e.target.value)}  />
               <label htmlFor="update">Data de atualização</label>
-              <input type="date" id='update' name='update' value={update} required onChange={(e) => setUpdate(e.target.value)}  />
+              <input type="date" id='update' name='update' value={update} onChange={(e) => setUpdate(e.target.value)}  />
             </div>
           </div>
           <div className="buttons-container">
