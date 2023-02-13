@@ -57,7 +57,7 @@ function Signup({handleOpenModal, modalOpen, setModalOpen}) {
               setModalOpen(false)
             }
           } else {
-            toast.error('As senhas não conferem!')
+            toast.error('As senhas precisam ser iguais!')
           }
         } else { 
           toast.error('Preencha todos os campos!')
