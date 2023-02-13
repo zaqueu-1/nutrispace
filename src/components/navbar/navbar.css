@@ -34,11 +34,10 @@
 .signout-btn {
     width: 10%;
     border: none;
-    padding: 0 1rem;
+    padding: 0 .5rem;
     font-size: 1.3rem;
     color: rgb(249, 78, 78);
     background: none;
-    margin-top: .5rem;
     margin-left: -.5rem;
     transition: all 0.4s;
     cursor: pointer;
@@ -54,6 +53,10 @@
 
 .closenav-btn {
     display: none;
+}
+
+.navbar-menu {
+    display: flex;
 }
 
 @media only screen and (max-width:600px) {
