@@ -27,8 +27,7 @@ function NewPatient() {
       : toast.error('Preencha todos os campos!'))
       break;
     case 'goToSection4':
-      (plan ? setSection(section + 1)
-      : toast.error('Preencha todos os campos!'))
+      setSection(section + 1)
       break;
     case 'back':
       setSection(section - 1);
@@ -175,7 +174,7 @@ function NewPatient() {
             <h3 className={section === 4 ? 'active' : ''}>4</h3>
           </div>
           <label htmlFor="plan">Tipo de Plano</label>
-          <select name="plan" value={plan} required onChange={(e) => setPlan(e.target.value)}>
+          <select name="plan" value={plan} onChange={(e) => setPlan(e.target.value)}>
             <option value={'Mensal'}>Mensal</option>
             <option value={'Bimestra'}>Bimestral</option>
             <option value={'Trimestral'}>Trimestral</option>
