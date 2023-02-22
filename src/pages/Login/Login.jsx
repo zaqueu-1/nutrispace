@@ -26,7 +26,6 @@ function Login() {
     const handleOpenModal = (e) => {
         e.preventDefault()
         (modalOpen ? setModalOpen(false) : setModalOpen(true))
-
     }
 
     const handleAuth = async (e) => {
@@ -44,13 +43,16 @@ function Login() {
     
         try {
             const res = await fetchDb.post('/login', userCredentials);
-            const { token } = res.data;
-            localStorage.setItem('createdBy', userEmail);
+            const userId = res.data.userId
+            const { token } = res.data.token
+
+            localStorage.setItem('createdBy', userId);
             localStorage.setItem('token', token);
             window.location.href = '/dashboard';
 
         } catch (error) {
             toast.error('Email ou senha incorretos!');
+            console.log(error);
         }
     };
     

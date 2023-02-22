@@ -27,13 +27,15 @@ p, h2 {
     flex-direction: column;
     padding: 2rem;
     background: rgba(117, 117, 117, 0.1);
-    width: 40%;
+    width: 50%;
+    max-width: 550px;
     border-radius: 12px;
     margin: 0 auto;
+    max-height: 300px;
  }
 
  .tools {
-    margin-top: 1rem;
+    margin-top: .5rem;
  }
 
  .multiplier-wrapper {
@@ -45,6 +47,7 @@ p, h2 {
     background: rgb(140, 82, 255, 0.4);
     border-radius: 5px;
     width: 45%;
+    max-width: 200px;
 }
 
 .multiplier-wrapper p {
@@ -100,7 +103,7 @@ p, h2 {
    background-color: rgba(104, 60, 192, 0.5);
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:940px) {
    h2 {
       margin-bottom: .5rem;
       font-size: 1.4rem;
@@ -120,6 +123,7 @@ p, h2 {
    .stats, .tools {
       padding: 1rem;
       width: 85%;
+      max-width: 550px;
    }
   
    .tools {
@@ -130,6 +134,7 @@ p, h2 {
       margin-bottom: .5rem;
       padding: .5rem;
       width: 80%;
+      max-width: 200px;
       justify-content: space-between;
   }
   

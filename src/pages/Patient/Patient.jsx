@@ -49,8 +49,8 @@ function Patient() {
       const createdByToken = localStorage.getItem("createdBy")
 
       if(patient.createdBy === createdByToken) {
-        window.location.href = '/patients';
         await fetchDb.delete(`/patient/${id}`);
+        window.location.href = '/patients';
       } else {
         toast.error('Você não tem permissão para excluir este paciente!')
       }

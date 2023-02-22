@@ -129,7 +129,7 @@ function NewPatient() {
                 </div>
                 <div className="wrapper">   
                   <label htmlFor="height">Altura</label>
-                  <input type="number" id='height' name='height' minLength='3' min='100' max='400' required value={height} onChange={(e) => setHeight(e.target.value)} placeholder="170" /> 
+                  <input type="number" id='height' name='height' minLength='3' min='100' max='400' required value={height} onChange={(e) => setHeight(e.target.value.replace(/[^0-9]/g, ''))} placeholder="170" /> 
                 </div>
               </div>
             <div className="buttons-container">
@@ -146,12 +146,12 @@ function NewPatient() {
               <h3 className={section === 3 ? 'active' : ''}>3</h3>
               <h3 className={section === 4 ? 'active' : ''}>4</h3>
             </div>
-              <label htmlFor="drive">Pasta do Drive</label>
-              <input type="text" name='drive' value={drive} required onChange={(e) => setDrive(e.target.value)} placeholder="Pasta do Google Drive" />
+              <label htmlFor="drive">Pasta de Exames</label>
+              <input type="text" name='drive' value={drive} required onChange={(e) => setDrive(e.target.value)} placeholder="Google Drive, Dropbox etc" />
               <div className="block">
                 <div className="wrapper-w20">
                   <label htmlFor="tel">Telefone</label>
-                  <input type="tel" id='tel'name='tel' minLength='8' value={tel} required onChange={(e) => setTel(e.target.value)} placeholder="21988888888" />
+                  <input type="tel" id='tel'name='tel' minLength='8' value={tel} required onChange={(e) => setTel(e.target.value.replace(/[^0-9]/g, ''))} placeholder="21988888888" />
                 </div>
                 <div className="wrapper-w20">
                   <label htmlFor="email">E-mail</label>

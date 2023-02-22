@@ -4,6 +4,7 @@
 
 .search-bar {
     width: 40%;
+    max-width: 450px;
     background-color: rgba(117, 117, 117, 0.2);
     border-radius: 8px;
     padding: .8rem;
@@ -51,6 +52,7 @@
 .card {
     background-color: rgb(140, 82, 255, 0.5);
     width: 45%;
+    max-width: 600px;
     margin: .5rem auto;
     padding: .8rem .6rem;
     border-radius: 6px 0 0 6px;
@@ -110,13 +112,14 @@
     cursor: not-allowed;
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:680px) {
     .card-container {
         margin-bottom: 1.5rem;
     }
     
     .search-bar {
         width: 80%;
+        max-width: 400px;
     }
     
     .message {
@@ -126,6 +129,7 @@
     
     .card {
         width: 80%;
+        max-width: 450px;
         margin: .4rem auto;
         padding: .6rem .5rem;
     }
@@ -141,4 +145,17 @@
     .index-buttons {
         margin: 1.5rem auto;
     }
+}
+
+@media only screen and (min-width: 681px) and (max-width: 940px) {
+    .search-bar {
+        width: 60%;
+        max-width: 450px;
+    }
+
+    .card {
+        width: 80%;
+        max-width: 600px;
+    }
+
 }

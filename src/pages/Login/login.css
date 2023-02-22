@@ -14,7 +14,7 @@
 }
 
 .astronaut {
-    height: 450px;
+    height: 400px;
     animation: glow 2.5s infinite;
 }
 
@@ -39,18 +39,20 @@
 
 .text-wrapper h2 {
     margin-top: 1rem;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: white;
     padding: 0 1rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .text-wrapper h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: rgb(187, 186, 186);
     padding: 0 1rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .login-container {
@@ -72,7 +74,7 @@
 }
 
 .login-container input, .signup-container input {
-    width: 40%;
+    width: 50%;
     height: 2.5rem;
     margin: 1rem 0;
     border: none;
@@ -83,6 +85,7 @@
     background: #fff;
     margin-bottom: -.8rem;
     outline: none;
+    max-width: 300px;
 }
 
 .login-container input::placeholder, .signup-container input::placeholder {
@@ -94,7 +97,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 50%;
     height: 2.5rem;
     margin: 1rem 0;
     gap: .5rem;
@@ -108,6 +111,7 @@
     margin-top: 1.5rem;
     transition: all 0.4s;
     cursor: pointer;
+    max-width: 180px;
 }
 
 .login-btn:hover {
@@ -141,7 +145,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 45%;
+    max-width: 180px;
     height: 2.5rem;
     margin: 1rem 0;
     border: none;
@@ -173,7 +178,7 @@
 }
 
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:680px) {
 
     .astronaut-container, .astronaut, .text-wrapper, .text-wrapper h2, .text-wrapper h3 {
         display: none;
@@ -214,6 +219,43 @@
     .google-login:hover {
         background: #9db5f8;
         color: white;
+    }
+
+}
+
+@media only screen and (min-width: 681px) and (max-width: 940px) {
+    
+    .astronaut {
+        height: 300px;
+    }
+    
+    .text-wrapper h2 {
+        margin-top: 1.2rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .text-wrapper h3 {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .login-container input, .signup-container input {
+        width: 55%;
+        font-size: 1rem;
+    }
+    
+    .login-btn {
+        width: 55%;
+    }
+    
+    .divider {
+        width: 45%;
+    }
+    
+    .google-login, .signup-btn {
+        width: 55%;
     }
 
 }

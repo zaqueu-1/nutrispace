@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
     const [email, setEmail] = useState('')
     const [drive, setDrive] = useState('')
     const [tel, setTel] = useState('')
-    const [plan, setPlan] = useState('')
+    const [plan, setPlan] = useState('Mensal')
     const [start, setStart] = useState('')
     const [end, setEnd] = useState('')
     const [feedback, setFeedback] = useState('')

@@ -26,10 +26,11 @@
     margin-top: 2rem;
 }
 
-.signup-container input {
+.signup-container form input {
     outline: none;
     transition: all 0.4s;
-    width: 100%;
+    width: 70%;
+    font-size: 1rem;
 }
 
 .signup-container p {
@@ -37,13 +38,68 @@
     color: rgb(199, 199, 199);
 }
 
-@media only screen and (max-width:600px) {
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    gap: .2rem;
+}
+
+.controls button {
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    background: #7a9aef;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    opacity: 0.8;
+}
+
+#signin-btn {
+    background: #d3ae4f;
+}
+
+#signin-btn:hover {
+    opacity: 0.8;
+}
+
+@media only screen and (max-width:680px) {
     
     .signup-container {
         margin-top: -9rem;
         width: 80%;
-        height: 40vh;
+        height: 45vh;
         padding: .8rem .5rem;
+    }
+
+    .signup-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .signup-container form input {
+        font-size: .95rem;
+        width: 85%;
+    }
+    
+    .close-btn {
+        display: none;
+    }
+    
+}
+
+@media only screen and (min-width: 681px) and (max-width: 940px) {
+   
+    .signup-container {
+        width: 55%;
     }
 
     .signup-container h1 {
